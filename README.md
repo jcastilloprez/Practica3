@@ -217,3 +217,6 @@ Una vez echa toda la batería de pruebas la tabla con los resultados es la sigui
 Observando los datos de desviación podemos ver que el dato que es más fiable para guiarnos a la hora de comparar ambos 
 sistemas operativos es el tiempo de ejecución. Por lo tanto podemos ver que el mejor rendimiento lo obtenemos con el 
 sistema operativo Ubuntu Server que tarda menos en atendernos a las peticiones. 
+
+En conclusión, si tuviera que montar mi servidor web y dispongo de las máquinas aquí citadas yo me quedaría con el 
+conjunto de máquinas de Ubuntu Server que me van a dar mejores resultados que las máquinas de CentOS. 
