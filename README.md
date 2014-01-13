@@ -123,3 +123,53 @@ e instalamos `nginx` con:
 Una vez que termine de instalarse lo iniciamos: 
 
 ![Práctica 3 - Foto 9](http://ubuntuone.com/1dAAGf2aaREfIutecD2Sge)
+
+## Aplicación
+
+La aplicación que voy a meter en cada una de las máquinas servidoras, va a ser una aplicación que utiliza el servicio de
+Google Maps. Dicha aplicación nos pide que introduzcamos un lugar y a continuación nos muestra el mapa de dicho lugar. 
+Ahora con ese lugar podemos hacer: aumentar para ver más detalles del lugar, igualmente disminuir, insertar marcadores 
+en el mapa, utilizar Street View y ver las coordenadas geográficas del lugar exacto en donde nos encontramos. 
+
+El fichero con la aplicación se encuentra en nuestra máquina anfitriona y debemos pasar dicho fichero a cada una de las 
+máquinas servidoras. Para CentOS es muy fácil ya que al disponer de entorno gráfico, podemos meter el fichero en un pen 
+y directamente sustituir el fichero que trae Apache por defecto por este otro. 
+
+Abrimos un navegador, lanzamos una petición a la máquina balanceadora y podemos ver que nuestra aplicación aparece en el
+navegador: 
+
+**Captura **
+
+En caso contrario, en Ubuntu Server al no tener entorno gráfico debemos de buscar otra alternativa. Dicha alternativa 
+pasa por compartir una carpeta de nuestra máquina anfitriona con las máquinas servidoras. Para realizar esto nos vamos 
+al apartado configuración de nuestra máquina virtual y en la pestaña "Options" elegimos la opción "Shared Folders" y 
+añadimos la carpeta que queremos compartir con la máquina virtual. 
+
+![Práctica 3 - Foto 10](http://ubuntuone.com/3OxIP6q2R7FHY9wVNjt8pK)
+
+A continuación iniciamos la máquina, instalamos los tools y realizamos los siguientes pasos: 
+
+> ```
+> mkdir -p /media/cdrom
+> mount /dev/cdrom /media/cdrom
+> cd /media/cdrom
+> cp VM*.tar.gz /tmp
+> apt-get -y install linux-headers-server build-essential
+> cd /tmp
+> umount /media/cdrom
+> tar xzvf VM*.tar.gz
+> cd vmware-tools-distrib
+> mkdir -p /usr/lib64
+> ./vmware-install.pl -d
+> reboot
+> cd /mnt/hgfs
+> ```
+
+y en este último directorio nos aparece la carpeta que estamos compartiendo con el fichero de la aplicación dentro. Ya 
+solo nos queda sustituir el fichero que trae Apache por defecto por este otro con la siguiente orden: 
+
+`cp index.html /var/www/`
+
+Realizamos la operación con ambas máquinas, abrimos un navegador y lanzamos una petición a la máquina balanceadora:
+
+![Práctica 3 - Foto 11](http://ubuntuone.com/3IPkiyf4myCW38Q5AiQPEB)
