@@ -173,3 +173,44 @@ solo nos queda sustituir el fichero que trae Apache por defecto por este otro co
 Realizamos la operación con ambas máquinas, abrimos un navegador y lanzamos una petición a la máquina balanceadora:
 
 ![Práctica 3 - Foto 12](http://ubuntuone.com/0MJwqtO4IbK4eqKc6N3iOV)
+
+## Benchmark
+
+En este apartado vamos a comprobar que trio de máquinas es el que funciona mejor con nuestra aplicación. Para ello vamos
+a medir las prestaciones de cada máquina balanceadora y ver entre Ubuntu Server y CentOS cuál proporciona mejores 
+resultados. Para realizar estas mediciones voy a utilizar el Apache Benchmark `ab`, dicho benchmark lo vamos a lanzar 
+desde el sistema anfitrión hacia las máquinas balanceadoras. 
+
+Al benchmark le voy a pedir que realice 10000 peticiones a mi aplicación y que estas peticiones las realice de 100 en 
+100. De todas las métricas que nos ofrece este benchmark, voy a centrar el estudio en tres métricas: el tiempo que tarda
+en ejecutar dicho test, las respuestas por segundo que ofrece y el tiempo que tarda en cada respuesta. Para poder 
+obtener datos concretos y fiable, voy a lanzar 10 veces seguidas dicho benchmark y tomar medias y desviaciones estándar 
+de las métricas anteriores. 
+
+Primero lo voy a lanzar sobre el balanceador de Ubuntu Server:
+
+![Práctica 3 - Foto 13](http://ubuntuone.com/3VhC5M88doylOnNV9gvxFg)
+
+Recogemos los datos de las 10 ejecuciones y después lo lanzamos sobre el balanceador de CentOS: 
+
+**Captura 14**
+
+Una vez echa toda la batería de pruebas la tabla con los resultados es la siguiente: 
+
+|             |                      |      Ubuntu Server      |                                |                      |    CentOS   |                                |
+|:-----------:|:--------------------:|:-----------------------:|:------------------------------:|:--------------------:|:-----------------------:|:------------------------------:|
+|             | Time taken for tests (seconds) | Requests per second | Time per request (ms) | Time taken for tests (seconds) | Requests per second | Time per request (ms) |
+|   Ejecución 1  |        12,027        |         831,48        |             120,268            |        13,438        |         725,26        |             130,384            |
+|   Ejecución 2  |        11,584        |         863,27        |             115,838            |        13,434        |         725,63        |             130,34            |
+|   Ejecución 3  |        11,646        |         858,69        |             116,456            |        13,317        |         728,2         |             128,168            |
+|   Ejecución 4  |        11,788        |         848,34        |             117,878            |        13,474        |         723,45        |             131,744            |
+|   Ejecución 5  |        11,54         |         866,57        |             115,397            |        13,491        |         721,3         |             132,909            |
+|   Ejecución 6  |        12,595        |         793,96        |             125,95             |        13,47         |         723,97        |             131,599            |
+|   Ejecución 7  |        11,555        |         865,41        |             115,552            |        13,469        |         724,47        |             131,494            |
+|   Ejecución 8  |        11,592        |         862,66        |             115,92             |        13,559        |         720,51        |             134,595            |
+|   Ejecución 9  |        11,238        |         889,8         |             112,384            |        13,488        |         722,51        |             131,884            |
+|  Ejecución 10  |        11,25         |         888,91        |             112,497            |        13,494        |         722,11        |             131,941            |
+|             |                      |                         |                                |                      |                         |                                |
+|    Media    |        11,6815        |        856,909        |            116,814            |        13,4694        |        723,741        |            131,5058            |
+| Desviación  |         0,394810855        |         27,95001588        |            0,062150713            |         2,28522525        |         1,6888049555       |             0,6212782164            |
+
