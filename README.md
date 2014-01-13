@@ -212,5 +212,9 @@ Una vez echa toda la batería de pruebas la tabla con los resultados es la sigui
 |  Ejecución 10  |        11,25         |         888,91        |             112,497            |        13,494        |         722,11        |             131,941            |
 |             |                      |                         |                                |                      |                         |                                |
 |    Media    |        11,6815        |        856,909        |            116,814            |        13,4694        |        723,741        |            131,5058            |
-| Desviación  |         0,394810855        |         27,95001588        |            0,062150713            |         2,28522525        |         1,6888049555       |             0,6212782164            |
+| Desviación  |         0,394810855        |         27,95001588        |            0,062150713            |         
+2,28522525        |         1,6888049555       |             0,6212782164            |
 
+Observando los datos de desviación podemos ver que el dato que es más fiable para guiarnos a la hora de comparar ambos 
+sistemas operativos es el tiempo de ejecución. Por lo tanto podemos ver que el mejor rendimiento lo obtenemos con el 
+sistema operativo Ubuntu Server que tarda menos en atendernos a las peticiones. 
