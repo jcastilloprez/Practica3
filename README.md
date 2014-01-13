@@ -184,7 +184,7 @@ desde el sistema anfitrión hacia las máquinas balanceadoras.
 Al benchmark le voy a pedir que realice 10000 peticiones a mi aplicación y que estas peticiones las realice de 100 en 
 100. De todas las métricas que nos ofrece este benchmark, voy a centrar el estudio en tres métricas: el tiempo que tarda
 en ejecutar dicho test, las respuestas por segundo que ofrece y el tiempo que tarda en cada respuesta. Para poder 
-obtener datos concretos y fiable, voy a lanzar 10 veces seguidas dicho benchmark y tomar medias y desviaciones estándar 
+obtener datos concretos y fiables, voy a lanzar 10 veces seguidas dicho benchmark y tomar medias y desviaciones estándar
 de las métricas anteriores. 
 
 Primero lo voy a lanzar sobre el balanceador de Ubuntu Server:
