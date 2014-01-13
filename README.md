@@ -138,7 +138,7 @@ y directamente sustituir el fichero que trae Apache por defecto por este otro.
 Abrimos un navegador, lanzamos una petición a la máquina balanceadora y podemos ver que nuestra aplicación aparece en el
 navegador: 
 
-**Captura 10**
+![Práctica 3 - Foto 10](http://ubuntuone.com/3ppgCd5nob1qIRXQGx2dBj)
 
 En caso contrario, en Ubuntu Server al no tener entorno gráfico debemos de buscar otra alternativa. Dicha alternativa 
 pasa por compartir una carpeta de nuestra máquina anfitriona con las máquinas servidoras. Para realizar esto nos vamos 
@@ -193,7 +193,7 @@ Primero lo voy a lanzar sobre el balanceador de Ubuntu Server:
 
 Recogemos los datos de las 10 ejecuciones y después lo lanzamos sobre el balanceador de CentOS: 
 
-**Captura 14**
+![Práctica 3 - Foto 14](http://ubuntuone.com/58kJbTGJesWgcDnkQf7UhW)
 
 Una vez echa toda la batería de pruebas la tabla con los resultados es la siguiente: 
 
