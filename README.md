@@ -138,14 +138,14 @@ y directamente sustituir el fichero que trae Apache por defecto por este otro.
 Abrimos un navegador, lanzamos una petición a la máquina balanceadora y podemos ver que nuestra aplicación aparece en el
 navegador: 
 
-**Captura **
+**Captura 10**
 
 En caso contrario, en Ubuntu Server al no tener entorno gráfico debemos de buscar otra alternativa. Dicha alternativa 
 pasa por compartir una carpeta de nuestra máquina anfitriona con las máquinas servidoras. Para realizar esto nos vamos 
 al apartado configuración de nuestra máquina virtual y en la pestaña "Options" elegimos la opción "Shared Folders" y 
 añadimos la carpeta que queremos compartir con la máquina virtual. 
 
-![Práctica 3 - Foto 10](http://ubuntuone.com/3OxIP6q2R7FHY9wVNjt8pK)
+![Práctica 3 - Foto 11](http://ubuntuone.com/2HhWHjBxeQLhFjN2CEO6sP)
 
 A continuación iniciamos la máquina, instalamos los tools y realizamos los siguientes pasos: 
 
@@ -172,4 +172,4 @@ solo nos queda sustituir el fichero que trae Apache por defecto por este otro co
 
 Realizamos la operación con ambas máquinas, abrimos un navegador y lanzamos una petición a la máquina balanceadora:
 
-![Práctica 3 - Foto 11](http://ubuntuone.com/3IPkiyf4myCW38Q5AiQPEB)
+![Práctica 3 - Foto 12](http://ubuntuone.com/0MJwqtO4IbK4eqKc6N3iOV)
