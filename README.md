@@ -74,5 +74,52 @@ antes y para demostrar qué máquina es la que realiza la petición, vamos a mod
 por defecto de ambas máquinas.
 
 Una vez que hemos realizado la modificación a los ficheros por defecto de Apache, nos vamos a la máquina anfitriona y 
-con el comando cURL, lanzamos peticiones a la máquina balanceadora y vemos como esta nos reparte la carga entre ambas 
-máquinas servidoras. 
+con el comando cURL lanzamos peticiones a la máquina balanceadora:
+
+![Práctica 3 - Foto 4](http://ubuntuone.com/3CPaPfklj2HgPSXOmrXzHd)
+
+y vemos como esta nos reparte la carga entre ambas máquinas servidoras, realizando la máquina más potente el doble de 
+peticiones que la máquina menos potente. 
+
+Ahora con el trio de máquinas de CentOS debemos realizar los mismos pasos: instalar el servidor LAMP en las máquinas 
+servidoras, instalar y configurar el balanceador `nginx` en la máquina balanceadora y probar que funcione. 
+
+Instalar el servidor LAMP en CentOS debe ser manualmente y no como en Ubuntu Server que mientras creabamos la máquina 
+esta nos permitia la opción de instalar dicho servidor. Por tanto, para instalar LAMP en CentOS debemos instalar primero
+el servidor Apache con:
+
+`yum install httpd httpd-devel`
+
+y una vez que se instale lo lanzamos: 
+
+![Práctica 3 - Foto 5](http://ubuntuone.com/2AMJ9xw6YNrB27PVpdUnLx)
+
+Ahora instalamos la base de datos MySQL con la orden: 
+
+`yum install mysql mysql-server mysql-devel`
+
+y lo arrancamos: 
+
+![Práctica 3 - Foto 6](http://ubuntuone.com/5Fb9chpTRGQkQYeXEx1lW6)
+
+Por último instalamos PHP con todas sus dependencias para que enlace correctamente con Apache y MySQL. Para ello 
+utilizamos la siguiente orden: 
+
+`yum install php php-mysql php-common php-gd php-mbstring php-mcrypt php-devel php-xml`
+
+y reiniciamos Apache para que recoja todos los cambios actuales: 
+
+![Práctica 3 - Foto 7](http://ubuntuone.com/2dzIehoLwvUvXRzAsiHFv5)
+
+El servidor LAMP lo instalamos en las dos máquinas servidoras y en la máquina balanceadora instalamos el balanceador 
+`nginx`. Para ello primeramente instalamos los repositorios que son requeridos para que nginx pueda ser instalado: 
+
+![Práctica 3 - Foto 8](http://ubuntuone.com/6p77HTduhyzKnaZCgnx9Fy)
+
+e instalamos `nginx` con:
+
+`yum install nginx`
+
+Una vez que termine de instalarse lo iniciamos: 
+
+![Práctica 3 - Foto 9](http://ubuntuone.com/1dAAGf2aaREfIutecD2Sge)
