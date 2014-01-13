@@ -68,4 +68,11 @@ obtenga estos últimos cambios que le hemos realizado en su fichero de configura
 
 ![Práctica 3 - Foto 3](http://ubuntuone.com/1XhdRkWbKKsRplLmN3DNey)
 
-Para demostrar que hemos realizado bien la configuración del balanceador y que cada vez que lanzemos peticiones al balanceador, este nos reparte las peticiones entre las dos máquinas servidoras
+Para demostrar que hemos realizado bien la configuración del balanceador y que cada vez que lanzemos peticiones al 
+balanceador, este nos reparte las peticiones entre las dos máquinas servidoras, vamos a hacer uso del comando cURL. Pero
+antes y para demostrar qué máquina es la que realiza la petición, vamos a modificar la página inicial que trae Apache 
+por defecto de ambas máquinas.
+
+Una vez que hemos realizado la modificación a los ficheros por defecto de Apache, nos vamos a la máquina anfitriona y 
+con el comando cURL, lanzamos peticiones a la máquina balanceadora y vemos como esta nos reparte la carga entre ambas 
+máquinas servidoras. 
